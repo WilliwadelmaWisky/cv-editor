@@ -6,6 +6,7 @@ const createWindow = () => {
         height: 600
     });
 
+    window.removeMenu()
     window.loadFile('index.html');
 }
 
