@@ -6,8 +6,8 @@ const createWindow = () => {
         height: 600
     });
 
-    window.removeMenu()
-    window.loadFile('index.html');
+    window.removeMenu();
+    window.loadFile('editor.html');
 }
 
 app.whenReady().then(() => {
