@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="editor.css"/>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-    <script src="editor.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="app.css"/>
+    <script src="app.js" defer></script>
     <title>Editor</title>
 </head>
 <body>
@@ -27,20 +26,14 @@
         <textarea name="description-input" placeholder="Enter text here..." id="description-field"></textarea>
 
         <h2>Languages</h2>
-        <label for="language-input">Language</label>
-        <input type="text" name="language-input" placeholder="Language..." id="language-field"/>
-        <input type="range"/>
+        <div id="lang-box" class="container"></div>
         <div class="button-box">
             <input type="button" value="Add" id="add-lang-btn"/>
             <input type="button" value="Remove" id="rem-lang-btn"/>
         </div>
 
         <h2>Education</h2>
-        <label for="education-input">Education</label>
-        <input type="text" name="education-input" placeholder="Education..." id="education-field"/>
-        <input type="text" name="institute-input" placeholder="Institute..." id="institute-field"/>
-        <input type="date" value="2023-12-26"/>
-        <input type="date" value="2023-12-26"/>
+        <div id="edu-box" class="container"></div>
         <div class="button-box">
             <input type="button" value="Add" id="add-edu-btn"/>
             <input type="button" value="Remove" id="rem-edu-btn"/>
@@ -57,9 +50,7 @@
             <input type="button" value="Remove" id="rem-job-btn"/>
         </div>
 
-        <select>
-            <option value="0">Template 1</option>
-        </select>
+        <select id="template-select"></select>
         <input type="submit" value="Generate"/>
     </form>
 </body>

@@ -2,7 +2,7 @@
   "name": "cv-editor",
   "version": "1.0.0",
   "description": "A simple editor for building cvs",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "electron ."
   },

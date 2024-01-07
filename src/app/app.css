@@ -73,3 +73,17 @@ input[type="button"] {
     font-size: 0.7em;
     width: 8em;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.d-flex { display: flex; }
+.flex-grow { flex-grow: 1; }
+.flex-direction-col { flex-direction: column; }
+.flex-direction-row { flex-direction: row; }
+.align-items-center { align-items: center; }
+.justify-content-center { justify-content: center; }
+.gap-half { gap: 0.5em; }
