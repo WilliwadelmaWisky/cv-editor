@@ -11,16 +11,42 @@ window.api.receive('send-templates', files => {
 window.api.send('request-templates', null);
 
 
+const languageSelect = document.getElementById("language-select");
+const languages = ["english", "finnish"]
+languages.forEach(language => {
+    const option = document.createElement("option");
+    option.innerText = language;
+    option.value = language;
+    languageSelect.appendChild(option);
+});
+
+
+const languageBox = document.getElementById("lang-box");
+
+
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    window.api.send('generate-cv', templateSelect.options.selectedIndex);
+
+    const languageInfos = [];
+    for (const languageElem of languageBox.childNodes) {
+        languageInfos.push({
+            language: languageElem.querySelector("input").value,
+            skillLevel: 100 - languageElem.querySelector("select").value * (100.0 / 4.0)
+        });
+    }
+
+    window.api.send('generate-cv', {
+        templateIndex: templateSelect.options.selectedIndex,
+        templateLanguage: languageSelect.value,
+        name: document.getElementById("name-field").value,
+        languageInfos: languageInfos
+    });
 })
 
 
 const addLanguageButton = document.getElementById("add-lang-btn");
 const removeLanguageButton = document.getElementById("rem-lang-btn");
-const languageBox = document.getElementById("lang-box");
 addLanguageButton.addEventListener("click", () => {
     const template = createLanguageTemplate();
     languageBox.appendChild(template);

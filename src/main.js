@@ -39,13 +39,13 @@ ipcMain.on('request-templates', (event, ...args) => {
     getTemplates(files => window.webContents.send('send-templates', files));
 })
 
+let data = null;
 ipcMain.on('generate-cv', (event, ...args) => {
     if (args.length <= 0) return;
-    const index = parseInt(args[0], 10);
-    if (index === NaN) return;
+    data = args[0];
 
     getTemplates(files => {
-        const templateDir = files[index].substring(files[index].lastIndexOf('/') + 1);
+        const templateDir = files[data.templateIndex].substring(files[data.templateIndex].lastIndexOf('/') + 1);
         const htmlPath = path.join(__dirname, 'app/templates', templateDir, 'template.html');
         const window = new BrowserWindow({
             width: 800,
@@ -57,6 +57,7 @@ ipcMain.on('generate-cv', (event, ...args) => {
 
         window.removeMenu();
         window.loadFile(htmlPath);
+        //window.webContents.openDevTools();
     })
 })
 
@@ -66,7 +67,7 @@ ipcMain.on('print-pdf', (event, ...args) => {
     const filePath = path.join(__dirname, 'print.pdf');
 
     const options = {
-        marginsType: 0,
+        marginsType: 1,
         pageSize: 'A4',
         printBackground: true,
         printSelectionOnly: false,
@@ -78,4 +79,11 @@ ipcMain.on('print-pdf', (event, ...args) => {
             if (error) throw error;
          });
     }).catch(error => { });
+})
+
+ipcMain.on('request-data', (event, ...args) => {
+    const window = BrowserWindow.getFocusedWindow();
+    if (data === null) return;
+    console.log(data);
+    window.webContents.send('get-data', data);
 })
