@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="template.css"/>
-    <script src="template.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="script.js" defer></script>
     <title>Result</title>
 </head>
 <body>
@@ -69,5 +69,12 @@
     </div>
 
     <button>Print</button>
+
+    <template id="lang-template">
+        <div class="d-flex flex-direction-row align-items-center gap-half">
+            <p class="w-5em">Language</p>
+            <progress value="50" max="100"></progress>
+        </div>
+    </template>
 </body>
 </html>

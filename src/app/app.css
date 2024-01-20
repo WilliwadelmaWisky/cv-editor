@@ -16,7 +16,7 @@ label {
 textarea {
     resize: vertical;
     min-height: 5em;
-    max-height: 10em;
+    max-height: 20em;
     padding: 12px 20px;
     display: inline-block;
     box-sizing: border-box;

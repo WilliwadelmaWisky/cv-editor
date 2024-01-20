@@ -46,7 +46,7 @@ ipcMain.on('generate-cv', (event, ...args) => {
 
     getTemplates(files => {
         const templateDir = files[data.templateIndex].substring(files[data.templateIndex].lastIndexOf('/') + 1);
-        const htmlPath = path.join(__dirname, 'app/templates', templateDir, 'template.html');
+        const htmlPath = path.join(__dirname, 'app/templates', templateDir, 'index.html');
         const window = new BrowserWindow({
             width: 800,
             height: 600,
