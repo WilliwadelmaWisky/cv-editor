@@ -16,6 +16,7 @@ const createWindow = () => {
     const appPath = path.join(__dirname, "app/app.html");
     window.removeMenu();
     window.loadFile(appPath);
+    window.webContents.openDevTools();
 }
 
 app.whenReady().then(() => {
