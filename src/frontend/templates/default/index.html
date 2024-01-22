@@ -12,26 +12,21 @@
             <img src="" alt=""/>
 
             <h2>Contact</h2>
-            <hr>
+            <div class="divider mleft-1"></div>
             <p id="address-field" class="px-1 m-0">Address</p>
             <p id="email-field" class="px-1 m-0">Email</p>
-            <p id="phonenum-field" class="px-1 m-0">Phonenumber</p>
+            <p id="phone-field" class="px-1 m-0">Phonenumber</p>
 
             <h2>Education</h2>
-            <hr>
-            <div id="edu-box" class="px-1">
-                <div class="d-flex flex-direction-col">
-                    <p>Education 1</p>
-                    <p>Title</p>
-                </div>
-            </div>
+            <div class="divider mleft-1"></div>
+            <div id="edu-box" class="px-1"></div>
 
             <h2>Langauges</h2>
-            <hr>
+            <div class="divider mleft-1"></div>
             <div id="lang-box" class="px-1"></div>
 
             <h2>Hobbies</h2>
-            <hr>
+            <div class="divider mleft-1"></div>
             <div id="hobby-box" class="px-1">
                 <p>Hobby 1</p>
             </div>
@@ -44,13 +39,7 @@
             <p id="desc-field" class="text-justified">Profile description text</p>
 
             <h2>Work experience</h2>
-            <div id="work-box">
-                <div>
-                    <p class="font-bold">Firm / Position</p>
-                    <p>01/2023 - 02/2024</p>
-                    <p>Description</p>
-                </div>
-            </div>
+            <div id="job-box"></div>
 
             <h2>Skills</h2>
             <div id="skill-box">
@@ -68,12 +57,27 @@
         </div>
     </div>
 
-    <button>Print</button>
+    <button class="">Print to PDF</button>
 
     <template id="lang-template">
         <div class="d-flex flex-direction-row align-items-center gap-half">
             <p class="w-5em">Language</p>
             <progress value="50" max="100"></progress>
+        </div>
+    </template>
+    
+    <template id="edu-template">
+        <div class="d-flex flex-direction-col">
+            <p>Education - Year</p>
+            <p>Title</p>
+        </div>
+    </template>
+
+    <template id="job-template">
+        <div>
+            <p class="font-bold">Firm / Position</p>
+            <p>01/2023 - 02/2024</p>
+            <p>Description</p>
         </div>
     </template>
 </body>

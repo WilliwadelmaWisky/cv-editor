@@ -25,10 +25,9 @@ body {
     width: 210mm;
     height: 297mm;
 }
-.progressbar {
-    background-color: #222222;
-    border-radius: 10px;
-    height: 0.5em;
+progress {
+    display: block;
+    box-sizing: border-box;
 }
 .progressbar-fill {
     background-color: orange;
@@ -57,11 +56,14 @@ body {
 .sidebar p {
     font-family: 'Calibri', sans-serif;
     color: #efefef;
+    padding: 0 0.5em;
 }
-.sidebar hr {
+
+.divider {
     border: 1px solid orange;
-    margin-left: 1em;
-    width: calc(100% - 1em);
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 .main {
@@ -99,3 +101,6 @@ body {
     padding-left: 1em; 
     padding-right: 1em;
 }
+
+.mleft-1 { margin-left: 1em; }
+.mt-2 { margin-top: 2em; }

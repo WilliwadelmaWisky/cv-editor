@@ -13,7 +13,7 @@ const createWindow = () => {
         }
     });
 
-    const appPath = path.join(__dirname, "app/app.html");
+    const appPath = path.join(__dirname, "frontend/app.html");
     window.removeMenu();
     window.loadFile(appPath);
     window.webContents.openDevTools();
@@ -32,7 +32,7 @@ app.on('window-all-closed', () => {
 })
 
 const getTemplates = (callback) => {
-    const dirPath = path.join(__dirname, "app/templates/"); 
+    const dirPath = path.join(__dirname, "frontend/templates/"); 
     fs.readdir(dirPath, (err, files) => callback(files))
 }
 
@@ -47,7 +47,7 @@ ipcMain.on('generate-cv', (event, ...args) => {
 
     getTemplates(files => {
         const templateDir = files[data.templateIndex].substring(files[data.templateIndex].lastIndexOf('/') + 1);
-        const htmlPath = path.join(__dirname, 'app/templates', templateDir, 'index.html');
+        const htmlPath = path.join(__dirname, 'frontend/templates', templateDir, 'index.html');
         const window = new BrowserWindow({
             width: 800,
             height: 600,
@@ -58,7 +58,7 @@ ipcMain.on('generate-cv', (event, ...args) => {
 
         window.removeMenu();
         window.loadFile(htmlPath);
-        //window.webContents.openDevTools();
+        window.webContents.openDevTools();
     })
 })
 
