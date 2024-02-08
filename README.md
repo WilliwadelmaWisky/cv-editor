@@ -1,6 +1,15 @@
-# CV-editor using electron
+# CV-Editor
+
+An easy to use editor for building good looking cvs with ease. 
+There are different templates to choose from. 
 
 Work in Progress
 
-Packages used:
+## Dependencies
 - Electron
+
+## Installation
+NOT READY TO BE USED!
+
+## Examples
+...
