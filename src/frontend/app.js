@@ -26,8 +26,8 @@ const educationBox = document.getElementById("edu-box");
 const jobBox = document.getElementById("job-box");
 
 
-const form = document.querySelector("form");
-form.addEventListener("submit", (e) => {
+const generateButton = document.getElementById("generate-btn");
+generateButton.addEventListener("click", (e) => {
     e.preventDefault();
 
     console.log(languageBox.children);

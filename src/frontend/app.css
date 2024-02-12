@@ -4,13 +4,13 @@ body {
     margin: 0 2em;
 }
 
-form {
+.form {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
 }
 
-label {
+p {
     padding-top: 0.5em;
 }
 textarea {
@@ -31,18 +31,8 @@ input[type="text"], input[type="email"], input[type="date"], input[type="tel"] {
     display: inline-block;
     box-sizing: border-box;
     border-radius: 2px;
-    box-shadow: 4px 4px 4px black;
-    background-color: #eee;
-    border: 1px solid #ccc;
-}
-input[type="submit"] {
-    padding: 12px 20px;
-    display: inline-block;
-    box-sizing: border-box;
-    border-radius: 2px;
-    box-shadow: 4px 4px 4px black;
-    background-color: #129924;
-    border: 1px solid #129624;
+    box-shadow: 3px 3px 3px #222;
+    border: 2px solid #ccc;
 }
 
 select {
@@ -61,6 +51,23 @@ select {
     justify-content: right;
     gap: 8px;
 }
+.header-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+    padding: 1em 0;
+}
+.content-box {
+    padding: 1em 1em;
+    background-color: #efefef;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 1em;
+}
 input[type="button"] {
     padding: 10px 12px;
     display: inline-block;
@@ -74,9 +81,46 @@ input[type="button"] {
     width: 8em;
 }
 
-.container {
+.add-btn {
+    padding: 10px 12px;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 2px;
+    box-shadow: 4px 4px 4px black;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 0.7em;
+    width: 3em;
+}
+.header-box h2 {
+    margin: 0;
+}
+
+#generate-btn {
+    padding: 12px 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 2px;
+    box-shadow: 4px 4px 4px black;
+    background-color: #129924;
+    border: 1px solid #129624;
+}
+
+.hbox {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 2em;
+}
+.hbox>* {
+    flex-grow: 1;
+}
+
+.vbox {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     gap: 0.5em;
 }
 
