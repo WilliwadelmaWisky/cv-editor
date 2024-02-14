@@ -7,32 +7,44 @@
     <title>Editor</title>
 </head>
 <body>
-    <h1>Editor</h1>
+    <h1>CV Editor</h1>
+    <p>Version 0.1</p>
+    <p>An editor for building custom curriculum vitaes. The editor is currently under production and probably contains bugs.</p>
     <div class="form">
-        <h2>Personal infromation</h2>
+        <h2>Personal data</h2>
         <div class="hbox">
             <p>Name</p>
             <input type="text" placeholder="Name..." id="name-field" class="flex-grow"/>
         </div>
-        
-        <p>Birthday</p>
-        <input type="date" value="2023-12-26" id="birthday-field"/>
-        <p>Email</p>
-        <input type="email" placeholder="example@email.com" id="email-field"/>
-        <p>Phone</p>
-        <input type="tel" placeholder="Phonenumber..." id="phonenumber-field"/>
-        <p>Address</p>
-        <input type="text" placeholder="Address..." id="address-field"/>
-        <p>Profile</p>
+        <div class="hbox">
+            <p>Birthday</p>
+            <input type="date" value="2023-12-26" id="birthday-field"/>
+        </div>
+        <div class="hbox">
+            <p>Email</p>
+            <input type="email" placeholder="example@email.com" id="email-field"/>
+        </div>
+        <div class="hbox">
+            <p>Phone</p>
+            <input type="tel" placeholder="Phonenumber..." id="phonenumber-field"/>
+        </div>
+        <div class="hbox">
+            <p>Address</p>
+            <input type="text" placeholder="Address..." id="address-field"/>
+        </div>
+        <div class="hbox">
+            <p>Image</p>
+            <input type="file" accept="image/png, image/jpeg" id="image-field"/>
+        </div>
+
+        <h2>Profile description</h2>
         <textarea placeholder="Enter text here..." id="description-field"></textarea>
-        <p>Image</p>
-        <input type="file" accept="image/png, image/jpeg" id="image-field"/>
 
         <h2>Details</h2>
-        <div class="hbox">
+        <div class="info-panel">
             <div class="vbox">
                 <div class="header-box">
-                    <h2 class="flex-grow">Languages</h2>
+                    <h3 class="flex-grow">Languages</h3>
                     <input type="button" value="Add" id="add-lang-btn"/>
                     <input type="button" value="Remove" id="rem-lang-btn"/>
                 </div>
@@ -40,7 +52,7 @@
             </div>
             <div class="vbox">
                 <div class="header-box">
-                    <h2 class="flex-grow">Education</h2>
+                    <h3 class="flex-grow">Education</h3>
                     <input type="button" value="Add" id="add-edu-btn"/>
                     <input type="button" value="Remove" id="rem-edu-btn"/>
                 </div>
@@ -48,19 +60,40 @@
             </div>
             <div class="vbox">
                 <div class="header-box">
-                    <h2 class="flex-grow">Job history</h2>
-                    <input type="button" value="+" id="add-job-btn" class=".add-btn"/>
-                    <input type="button" value="-" id="rem-job-btn" class=".add-btn"/>
+                    <h3 class="flex-grow">Job history</h3>
+                    <input type="button" value="Add" id="add-job-btn"/>
+                    <input type="button" value="Remove" id="rem-job-btn"/>
                 </div>
                 <div id="job-box" class="content-box flex-grow"></div>
+            </div>
+            <div class="vbox">
+                <div class="header-box">
+                    <h3 class="flex-grow">Skills</h3>
+                    <input type="button" value="Add" id="add-skill-btn"/>
+                    <input type="button" value="Remove" id="rem-skill-btn"/>
+                </div>
+                <div id="skill-box" class="content-box flex-grow"></div>
+            </div>
+            <div class="vbox">
+                <div class="header-box">
+                    <h3 class="flex-grow">Hobbies</h3>
+                    <input type="button" value="Add" id="add-hobby-btn"/>
+                    <input type="button" value="Remove" id="rem-hobby-btn"/>
+                </div>
+                <div id="hobby-box" class="content-box flex-grow"></div>
             </div>
         </div>
 
         <h2>Options</h2>
-        <p>Template</p>
-        <select id="template-select"></select>
-        <p>Language</p>
-        <select id="language-select"></select>
+        <div class="hbox">
+            <p>Template</p>
+            <select id="template-select"></select>
+        </div>
+        <div class="hbox">
+            <p>Language</p>
+            <select id="language-select"></select>
+        </div>
+        
         <input type="button" value="Generate" id="generate-btn"/>
     </div>
 
